@@ -1,9 +1,12 @@
 import './App.css';
+import Form from './component/Form';
 
 function App() {
   return (
-    <div className="p-4">
-    <button className="bg-blue-400 text-white xl:container font-medium p-4 rounded-lg hover:bg-blue-600">Hello</button>
+    <div className="p-10">
+      <div className="pl-10">
+        <Form />
+      </div>
     </div>
   );
 }
