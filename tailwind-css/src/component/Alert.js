@@ -25,7 +25,7 @@ const Alert = () => {
         <div>
           <p className="font-bold">Our privacy policy has changed</p>
           <p className="text-sm">
-            Make sure you know how these changes affect you.
+            Make sure you have to enter valid usename and password
           </p>
         </div>
       </div>

@@ -1,22 +1,35 @@
 import Alert from "./Alert";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const Form = () => {
-   const [username, setUsername] = useState('');
-   const [isAlert,setAlert] = useState(false);
+  const [username, setUsername] = useState("");
+  const [isAlert, setAlert] = useState(false);
 
-   useEffect(()=>{
-       setTimeout(()=>{
-        setAlert(true)
-       },5000)
-   },[username])
+  useEffect(() => {
+    settimeout();
+  }, [username]);
+
+  const onHndleSubmit = (event) => {
+    event.preventDefault();
+    if (!username) {
+      setAlert(false);
+      settimeout();
+    }
+  };
+
+  const settimeout = () =>{
+    setTimeout(() => {
+      setAlert(true);
+    }, 5000);
+  }
 
   return (
     <div className="w-full max-w-xs">
-        {
-            isAlert? '':<Alert/>
-        }
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      {isAlert ? "" : <Alert />}
+      <form
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        onSubmit={(e) => onHndleSubmit(e)}
+      >
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
@@ -48,12 +61,12 @@ const Form = () => {
           {/* <p className="text-red-500 text-xs italic">Please choose a password.</p> */}
         </div>
         <div className="flex items-center justify-between">
-          <button
+          <input
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
-          >
-            Sign In
-          </button>
+            type="submit"
+            value="Sign In"
+          />
           <a
             className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
             href="#"
