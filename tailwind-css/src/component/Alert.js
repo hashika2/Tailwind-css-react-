@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Alert = () => {
+const Alert = ({name}) => {
     useEffect(() => {
         console.log("*********")
         return () => {
@@ -25,7 +25,7 @@ const Alert = () => {
         <div>
           <p className="font-bold">Our privacy policy has changed</p>
           <p className="text-sm">
-            Make sure you have to enter valid usename and password
+            {name}
           </p>
         </div>
       </div>
